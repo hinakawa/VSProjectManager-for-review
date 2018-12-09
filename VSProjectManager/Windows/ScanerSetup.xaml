@@ -1,0 +1,81 @@
+﻿<Window x:Class="VSProjectManager.ScanerSetup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VSProjectManager"
+        mc:Ignorable="d"
+        Title="ScanerSettings" Height="300" Width="450"
+        MinHeight="200" MinWidth="250"
+        Background="Black">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.4*"/>
+        </Grid.RowDefinitions>
+        <Border Style="{StaticResource CyberGroup}" 
+                Margin="5" 
+                Grid.Row="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="29"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Border Style="{StaticResource CyberGroup}" 
+                        Grid.Row="0" 
+                        BorderThickness="0,0,0,2">
+                    <DockPanel VerticalAlignment="Center">
+                        <Button x:Name="addDefault" Style="{StaticResource CyberButtonOK}" 
+                                DockPanel.Dock="Right"
+                                Content="Add" 
+                                Margin="2, 3.3, 3, 2.5"
+                                Padding="3, -3"
+                                VerticalContentAlignment="Center" Click="_addPathLine"
+                                Width="46"/>
+                        <Label Style="{StaticResource CyberLabel}"
+                               Content="Default Paths"/>
+                    </DockPanel>
+                </Border>
+                <StackPanel Orientation="Vertical" 
+                            x:Name="stackDefaultPaths" 
+                            Grid.Row="1"/>
+            </Grid>
+        </Border>
+        <Border Style="{StaticResource CyberGroup}" 
+                Margin="5" 
+                Grid.Row="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="29"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Border Style="{StaticResource CyberGroup}" 
+                        Grid.Row="0" 
+                        BorderThickness="0,0,0,2">
+                    <DockPanel VerticalAlignment="Center">
+                        <Button x:Name="addSkip" Style="{StaticResource CyberButtonOK}" 
+                                DockPanel.Dock="Right"
+                                Content="Add" 
+                                Margin="2, 3, 3, 2.5"
+                                Padding="3, -3"
+                                VerticalContentAlignment="Center" Click="_addPathLine"
+                                Width="46"/>
+                        <Label Style="{StaticResource CyberLabel}"
+                               Content="Skip Paths"/>
+                    </DockPanel>
+                </Border>
+                <StackPanel Orientation="Vertical" 
+                            x:Name="stackSkipPaths" 
+                            Grid.Row="1"/>
+            </Grid>
+        </Border>
+        <Border Style="{StaticResource CyberGroupNoLine}"
+                Grid.Row="2"
+                Margin="5">
+            <Button x:Name="ButtonAccept" Style="{StaticResource CyberButtonOK}"
+                    Margin="2.5"
+                    Content="Accept" Click="AcceptClick"/>
+        </Border>
+    </Grid>
+</Window>

@@ -1,0 +1,52 @@
+﻿<Window x:Class="VSProjectManager.Search"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VSProjectManager.Windows"
+        mc:Ignorable="d"
+        Title="Filter" Height="300" Width="600"
+        MinHeight="200" MinWidth="400"
+        Background="Black">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Border Style="{StaticResource CyberGroup}" 
+                Margin="5" 
+                Grid.Row="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="29"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Border Style="{StaticResource CyberGroup}" 
+                        Grid.Row="0" 
+                        BorderThickness="0,0,0,2">
+                    <DockPanel VerticalAlignment="Center">
+                        <Button x:Name="addProperty" Style="{StaticResource CyberButton}" 
+                                DockPanel.Dock="Right"
+                                Content="Add Property" 
+                                Margin="2, 3.3, 3, 2.5"
+                                Padding="3, -3"
+                                VerticalContentAlignment="Center" Click="addProperty_Click"
+                                Width="91"/>
+                        <Label Style="{StaticResource CyberLabel}"
+                               Content="Filter Parameters:"/>
+                    </DockPanel>
+                </Border>
+                <StackPanel Orientation="Vertical" 
+                            x:Name="stackParameters" 
+                            Grid.Row="1"/>
+            </Grid>
+        </Border>
+        <Border Style="{StaticResource CyberGroupNoLine}"
+                Grid.Row="2"
+                Margin="5">
+            <Button x:Name="ButtonAccept" Style="{StaticResource CyberButtonOK}"
+                    Margin="2.5"
+                    Content="Accept" Click="ButtonAccept_Click"/>
+        </Border>
+    </Grid>
+</Window>
